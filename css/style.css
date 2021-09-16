@@ -1,0 +1,163 @@
+:root {
+
+	--soft-violet: hsl(273, 75%, 66%);
+	--soft-blue: hsl(240, 73%, 65%);
+	--very-dark-desaturated-blue: hsl(238, 29%, 16%);
+	--soft-red: hsl(14, 88%, 65%);
+	--very-dark-greyish-blue: hsl(237, 12%, 33%);
+	--dark-greyish-blue: hsl(240, 6%, 50%);
+	--light-greyish-blue: hsl(240, 5%, 91%);
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 12px;
+	font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+    max-width: 1440px;
+    min-width: 350px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(180deg, var(--soft-violet), var(--soft-blue));
+    background-repeat: no-repeat;
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
+}
+
+main {
+    max-width: 1000px;
+    width: 100%;
+    padding: 100px 50px 100px 500px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    background-color: white;
+    background-image:url('../images/illustration-woman-online-desktop.svg'), url('../images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: center left -5rem, center left -30rem;
+}
+
+main::before {
+    content: url('../images/illustration-box-desktop.svg');
+    position: absolute;
+    top: calc(50% - 50px);
+    left: -90px;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--very-dark-desaturated-blue);
+    text-transform: uppercase;
+}
+
+.faq-accordion {
+    width: 100%;
+}
+
+.faq-accordion .question-and-answer {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--light-greyish-blue); 
+}
+
+.faq-accordion .question-and-answer .question {
+	font-size: 1.1em;
+	color: var(--very-dark-grayish-blue);
+}
+
+.faq-accordion .question-and-answer .question:hover {
+	color: var(--soft-red);
+	cursor: pointer;
+}
+
+.faq-accordion .question-and-answer .question{
+	font-weight: 400;
+}
+
+.faq-accordion .question-and-answer.active .question {
+	font-weight: 700;
+}
+
+.faq-accordion .question-and-answer.active::after {
+	transform: rotate(180deg);
+}
+
+.faq-accordion .question-and-answer .question::after {
+	content: url('../images/icon-arrow-down.svg');
+    padding: 0 10px;
+    float: right;
+    transition: all 500ms;
+}
+
+.faq-accordion .question-and-answer .answer {
+	display: none;
+	margin-top: 15px;
+}
+
+footer.attribution {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+}
+
+footer.attribution a { 
+	color: hsl(184, 100%, 89%); 
+}
+
+@media screen and (max-width: 1100px) {
+    main{
+        width: 90%;
+        padding: 50px 50px 50px 400px;
+        background-position: center left -7rem, center left -37rem;
+    }
+    main::before {
+        top: calc(50% - 30px);
+        left: -90px;
+    }
+}
+@media screen and (max-width: 900px) {
+    main {
+        max-width: 500px;
+        margin-top: 100px;
+        padding: 100px 30px 50px;
+        background-image: url('../images/bg-pattern-mobile.svg');
+        background-position: top center;
+    }
+    main::before{
+        content: url('../images/illustration-woman-online-mobile.svg');
+        width: 100%;
+        position: absolute;
+        top: -110px; left: -10px;
+        text-align: center;
+    }
+
+    h1{ 
+    	font-size: 2.1; 
+    	text-align: center; 
+    }
+}
+
+@media screen and (max-width: 400px) {
+    main {
+        padding: 110px 20px 50px;
+    }
+}
